@@ -1,3 +1,11 @@
+# Getting started
+
+```
+mkdir .venv
+python -m pip install --upgrade pip
+pipenv install -d --python 3.10
+```
+
 # Question answering
 
 ## `question_answering_bert_finetuned_squad_demo.ipynb`
