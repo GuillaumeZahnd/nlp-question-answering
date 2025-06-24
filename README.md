@@ -6,6 +6,28 @@ python -m pip install --upgrade pip
 pipenv install -d --python 3.10
 ```
 
+## Jupyter notebook using pipenv
+
+0. Create a pipenv shell:
+
+```sh
+pipenv shell
+```
+
+1. Install the pipenv kernelspec for jupyter:
+
+```sh
+python -m ipykernel install --user --name=`basename $VIRTUAL_ENV`
+```
+
+2. Launch the jupyter notebook:
+
+```sh
+jupyter notebook
+```
+
+3. From the notebook, select the `.venv` kernel.
+
 # Question answering
 
 ## `question_answering_bert_finetuned_squad_demo.ipynb`
