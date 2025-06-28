@@ -56,6 +56,10 @@ jupyter notebook
 ## Docs
 
 - [Mistral AI](https://docs.mistral.ai/)
+- [DeepSeek](https://api-docs.deepseek.com/)
+- [OpenAI](https://platform.openai.com/docs/overview)
+- [Anthropic](https://docs.anthropic.com/en/home)
+- [Unsloth](https://docs.unsloth.ai/)
 
 ## Academics
 
@@ -63,6 +67,7 @@ jupyter notebook
 
 ## Blogs
 
+- [IBM think](https://www.ibm.com/think/topics)
 - [The latest research from Google](https://research.google/blog)
 - [Anthropic](https://transformer-circuits.pub/2021/framework/index.html)
 - [The AI summer](https://theaisummer.com/positional-embeddings/)
