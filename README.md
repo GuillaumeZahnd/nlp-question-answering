@@ -2,7 +2,7 @@
 
 ```
 mkdir .venv
-python -m pip install --upgrade pip
+python -m pip install --upgrade setuptools pip
 pipenv install -d --python 3.10
 ```
 

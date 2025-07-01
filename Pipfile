@@ -4,19 +4,33 @@ verify_ssl = true
 name = 'pypi'
 
 [packages]
+
+# Essentials
 numpy = {version='>=1.17', index='pypi'}
+matplotlib = {version='==3.10.3', index='pypi'}
+seaborn = {version='==0.13.2', index='pypi'}
+
+# NLP
+nltk = {version='==3.9.1', index='pypi'}
+spacy = {version='==3.8.7', index='pypi'}
+
+# TensorFlow
 tensorflow = {version='==2.15.0', index='pypi'}  # Installing tf<2.16 to install keras<3 for transformers compatibility
+tensorflow-datasets = {version='==4.9.9', index='pypi'}
+
+# Hugging Face
 transformers = {version='==4.53.0', index='pypi'}
+datasets = {version='==3.6.0', index='pypi'}
+
+# Jupyter
 jupyter = {version='==1.1.1', index='pypi'}
 ipykernel = {version='==6.29.5', index='pypi'}
+
+# Misc
 torch = {version='==2.7.1', index='pypi'}
 mistralai = {version='==1.8.2', index='pypi'}
 requests = {version='==2.32.4', index='pypi'}
 faiss-cpu = {version='==1.11.0', index='pypi'}
-nltk = {version='==3.9.1', index='pypi'}
-matplotlib = {version='==3.10.3', index='pypi'}
-seaborn = {version='==0.13.2', index='pypi'}
-spacy = {version='==3.8.7', index='pypi'}
 
 [dev-packages]
 
