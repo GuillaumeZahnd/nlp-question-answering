@@ -1,6 +1,7 @@
 import torch
 import numpy as np
-from utils_nlp import get_model_and_tokenizer
+from transformers import BertForQuestionAnswering
+from transformers import BertTokenizer
 
 
 def question_answering_bert_finetuned_squad_wrapper(context: str, question: str) -> str:
@@ -8,7 +9,8 @@ def question_answering_bert_finetuned_squad_wrapper(context: str, question: str)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     model_checkpoint = 'bert-large-uncased-whole-word-masking-finetuned-squad'
-    model, tokenizer = get_model_and_tokenizer(model_checkpoint=model_checkpoint, device=device)
+    model = BertForQuestionAnswering.from_pretrained(model_checkpoint).to(device)
+    tokenizer = BertTokenizer.from_pretrained(model_checkpoint)
     
     batch_encoding_tmp = tokenizer.encode_plus(text=question, text_pair=context)
     input_ids = batch_encoding_tmp['input_ids']
