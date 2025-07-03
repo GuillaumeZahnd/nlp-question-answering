@@ -57,6 +57,7 @@ jupyter notebook
 
 - [Mistral AI](https://docs.mistral.ai/)
 - [DeepSeek](https://api-docs.deepseek.com/)
+- [Hugging Face](https://huggingface.co/learn/llm-course/chapter0/1)
 - [OpenAI](https://platform.openai.com/docs/overview)
 - [Anthropic](https://docs.anthropic.com/en/home)
 - [Unsloth](https://docs.unsloth.ai/)

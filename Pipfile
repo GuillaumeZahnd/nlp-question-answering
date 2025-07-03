@@ -21,6 +21,8 @@ tensorflow-datasets = {version='==4.9.9', index='pypi'}
 # Hugging Face
 transformers = {version='==4.53.0', index='pypi'}
 datasets = {version='==3.6.0', index='pypi'}
+accelerate = {version='>=0.26.0', index='pypi'}
+evaluate = {version='==0.4.4', index='pypi'}
 
 # Jupyter
 jupyter = {version='==1.1.1', index='pypi'}
@@ -31,6 +33,8 @@ torch = {version='==2.7.1', index='pypi'}
 mistralai = {version='==1.8.2', index='pypi'}
 requests = {version='==2.32.4', index='pypi'}
 faiss-cpu = {version='==1.11.0', index='pypi'}
+seqeval = {version='==1.2.2', index='pypi'}
+wandb = {version='==0.21.0', index='pypi'}
 
 [dev-packages]
 
