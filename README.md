@@ -1,5 +1,7 @@
 # Getting started
 
+Depending on your operating system (``<os>``, linux or windows), rename the file ``Pipfile_<os>`` into ``Pipfile``.
+
 ```
 mkdir .venv
 python -m pip install --upgrade setuptools pip

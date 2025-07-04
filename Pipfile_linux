@@ -39,4 +39,4 @@ wandb = {version="==0.21.0", index="pypi"}
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version >= "3.10"
