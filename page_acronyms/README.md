@@ -1,3 +1,5 @@
+# Acronyms
+
 | Acronym | Full term |
 | --- | --- |
 | BERT | Bidirectional Encoder Representations from Transformers |
@@ -6,8 +8,10 @@
 | GloVe | Global Vectors for Word Representation |
 | LLM | Large Language Model |
 | LoRA | Low-Rank Adaptation |
+| MLM | Masked Language Modeling |
 | NER | Named Entity Recognition |
 | NLP | Natural Language Processing |
-| POS | Part-Of-Speech |
+| NSP | Next Sentence Prediction |
+| POS | Part Of Speech |
 | RAG | Retrieval Augmented Generation |
 | TF-IDF | Term Frequency-Inverse Document Frequency |
