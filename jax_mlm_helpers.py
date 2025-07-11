@@ -5,6 +5,42 @@ from jax.typing import ArrayLike
 import jax.numpy as jnp
 from jax import random
 from typing import List
+import spacy
+from collections import Counter
+nlp = spacy.load("en_core_web_sm")
+
+
+def build_vocabulary(texts, max_vocab=10000, min_freq=1):
+
+    word_counter = Counter()
+    for doc in texts:
+        for word in doc:
+            word_counter[word.lower()] += 1
+
+    dico_word2index = {}
+    dico_index2word = {}
+
+    special_tokens = ["[MASK]", "[PAD]", "[UNK]"]
+    for token in special_tokens:
+        index = len(dico_word2index)
+        dico_word2index[token] = index
+        dico_index2word[index] = token
+
+    for word, count in word_counter.most_common():
+        if count < min_freq: break
+        if len(dico_word2index) >= max_vocab: break
+        index = len(dico_word2index)
+        dico_word2index[word] = index
+        dico_index2word[index] = word
+
+    return dico_word2index, dico_index2word
+
+
+def apply_word_tokenization(text) -> List[str]:
+    nlp = spacy.blank("en")
+    doc = nlp(text)
+    word_tokens = [str(w).lower() for w in doc]
+    return word_tokens
 
 
 def apply_random_masking(
@@ -30,15 +66,15 @@ def apply_random_masking(
 
     """
 
-    sequence_length_begore_padding = len(input_indices)
+    sequence_length_before_padding = len(input_indices)
 
     main_rng = random.PRNGKey(421)
     _, sub_rng = random.split(main_rng)
-    random_masking_probabilities = random.uniform(sub_rng, shape=(sequence_length_begore_padding))
+    random_masking_probabilities = random.uniform(sub_rng, shape=(sequence_length_before_padding))
 
     input_indices = jnp.array(np.array(input_indices), dtype="int32")
 
-    mask = jnp.zeros((sequence_length_begore_padding), dtype="int32")
+    mask = jnp.zeros((sequence_length_before_padding), dtype="int32")
     mask = mask.at[random_masking_probabilities<masking_probability].set(1)
 
     masked_indices = input_indices.at[mask==1].set(index_for_masked_values)

@@ -85,13 +85,15 @@ class MultiheadAttention(nn.Module):
     def setup(self):
 
         self.qkv_projection = nn.Dense(
-            3 * self.embedding_dimensionality,
+            features=3 * self.embedding_dimensionality,
             kernel_init=nn.initializers.xavier_uniform(),
+            use_bias=True,
             bias_init=nn.initializers.zeros)
 
         self.w_o_projection = nn.Dense(
-            self.embedding_dimensionality,
+            features=self.embedding_dimensionality,
             kernel_init=nn.initializers.xavier_uniform(),
+            use_bias=True,
             bias_init=nn.initializers.zeros)
 
     def __call__(self, x, mask=None):
@@ -128,10 +130,10 @@ class EncoderBlock(nn.Module):
             number_of_heads=self.number_of_heads)
 
         self.linear = [
-            nn.Dense(self.feedforward_dimensionality),
+            nn.Dense(features=self.feedforward_dimensionality),
             nn.Dropout(self.dropout_probability),
             nn.relu,
-            nn.Dense(self.input_dimensionality)]
+            nn.Dense(features=self.input_dimensionality)]
 
         self.layer_normalization_1 = nn.LayerNorm()
         self.layer_normalization_2 = nn.LayerNorm()
@@ -144,7 +146,7 @@ class EncoderBlock(nn.Module):
         x = x + self.dropout(attention_out, deterministic=not train)
         x = self.layer_normalization_1(x)
 
-        # Feed-forward
+        # Feedforward
         linear_out = x
         for l in self.linear:
             linear_out = l(linear_out) if not isinstance(l, nn.Dropout) else l(linear_out, deterministic=not train)
