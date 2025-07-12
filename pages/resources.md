@@ -13,6 +13,8 @@
 - [DeepSeek](https://api-docs.deepseek.com/)
 - [Hugging Face](https://huggingface.co/docs/datasets/en/package_reference/main_classes)
 - [OpenAI](https://platform.openai.com/docs/overview)
+- [PyTorch](https://docs.pytorch.org/docs/stable/index.html)
+- [TensorFlow](https://www.tensorflow.org/api_docs/python/tf)
 - [Anthropic](https://docs.anthropic.com/en/home)
 - [Unsloth](https://docs.unsloth.ai/)
 - [Langformers](https://langformers.com/)

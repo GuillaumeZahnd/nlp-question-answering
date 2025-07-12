@@ -10,7 +10,7 @@ This Git repository is dedicated to experimenting various techniques of Natural 
 
 :robot: [Demo NER (Hugging Face)](demo_ner.ipynb)
 
-:robot: [Demo CBOW (Tensorflow)](demo_cbow.ipynb)
+:robot: [Demo CBOW (TensorFlow)](demo_cbow.ipynb)
 
 :books: [Resources](pages/resources.md)
 

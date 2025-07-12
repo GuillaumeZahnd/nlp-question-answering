@@ -8,10 +8,10 @@ from jax_mlm_helpers import apply_random_masking
 from jax_mlm_helpers import pad_and_crop_to_maximum_length
 
 
-def construct_mlm_dataset() -> None:
+def construct_mini_mlm_dataset(path_to_text_file: str, text_file_name: str) -> None:
 
     # Read text file
-    with open("local_datasets/wikipedia_man_o_war.txt", "r") as fid:
+    with open(os.path.join(path_to_text_file, path_to_text_file + ".txt"), "r") as fid:
         text = fid.read()
 
     # Handle new lines
@@ -73,5 +73,5 @@ def construct_mlm_dataset() -> None:
             dataset.append(data)
 
     # Save
-    with open(os.path.join("local_datasets", "wikipedia_man_o_war.pkl"), "wb") as fid:
+    with open(os.path.join(path_to_text_file, path_to_text_file + ".pkl"), "wb") as fid:
         pickle.dump([dico_word2index, dico_index2word, dataset], fid)
