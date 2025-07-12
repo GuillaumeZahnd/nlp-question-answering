@@ -5,19 +5,22 @@
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 - [Dive into deep learning](https://d2l.ai/index.html)
 - [The engineer's guide to deep learning](https://www.interdb.jp/dl/index.html)
+- [Transformers for NLP and Computer Vision](https://github.com/Denis2054/Transformers-for-NLP-and-Computer-Vision-3rd-Edition)
 
-
-## Docs
+## Libraries
 
 - [Mistral AI](https://docs.mistral.ai/)
 - [DeepSeek](https://api-docs.deepseek.com/)
-- [Hugging Face](https://huggingface.co/learn/llm-course/chapter0/1)
+- [Hugging Face](https://huggingface.co/docs/datasets/en/package_reference/main_classes)
 - [OpenAI](https://platform.openai.com/docs/overview)
 - [Anthropic](https://docs.anthropic.com/en/home)
 - [Unsloth](https://docs.unsloth.ai/)
+- [Langformers](https://langformers.com/)
 
-## Academics
+## Courses
 
+- [Hugging Face](https://huggingface.co/learn/llm-course/chapter0/1)
+- [The Annotated Transformer](https://nlp.seas.harvard.edu/annotated-transformer/)
 - [UvA Deep Learning Tutorials](https://uvadlc-notebooks.readthedocs.io/en/latest/)
 
 ## Blogs
@@ -29,3 +32,4 @@
 - [Lilian](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)
 - [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 - [Joris Baanjax_trans](https://jorisbaan.nl/posts/)
+https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse
