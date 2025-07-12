@@ -4,11 +4,13 @@ This Git repository is dedicated to experimenting various techniques of Natural 
 
 :clipboard: [HowTo](pages/howto.md)
 
-:robot: [Demo BERT](demo_question_answering_bert_finetuned_squad.ipynb)
+:robot: [Demo RAG (Mistral)](mistral/demo_rag.ipynb)
 
-:robot: [Demo NER](demo_ner.ipynb)
+:robot: [Demo question answering (BERT)](demo_question_answering_bert_finetuned_squad.ipynb)
 
-:robot: [Demo CBOW](demo_cbow.ipynb)
+:robot: [Demo NER (Hugging Face)](demo_ner.ipynb)
+
+:robot: [Demo CBOW (Tensorflow)](demo_cbow.ipynb)
 
 :books: [Resources](pages/resources.md)
 
