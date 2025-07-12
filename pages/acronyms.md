@@ -5,7 +5,7 @@
 | BERT | Bidirectional Encoder Representations from Transformers |
 | CBOW | Continuous Bag of Words |
 | CoNLL | Conference on Computational Natural Language Learning |
-[ DAE | Denoising Autoencoder |
+| DAE | Denoising Autoencoder |
 | GloVe | Global Vectors for Word Representation |
 | LLM | Large Language Model |
 | LoRA | Low-Rank Adaptation |

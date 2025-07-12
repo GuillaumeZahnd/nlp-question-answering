@@ -2,11 +2,16 @@
 
 This Git repository is dedicated to experimenting various techniques of Natural Language Processing.
 
-:clipboard: [HowTo]
+:clipboard: [HowTo](pages/howto.md)
+
 :robot: [Demo BERT](demo_question_answering_bert_finetuned_squad.ipynb)
+
 :robot: [Demo NER](demo_ner.ipynb)
+
 :robot: [Demo CBOW](demo_cbow.ipynb)
+
 :books: [Resources](pages/resources.md)
+
 :speech_balloon: [Acronyms](pages/acronyms.md)
 
 # Example

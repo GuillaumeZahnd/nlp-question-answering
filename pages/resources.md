@@ -31,5 +31,5 @@
 - [The AI summer](https://theaisummer.com/positional-embeddings/)
 - [Lilian](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)
 - [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
-- [Joris Baanjax_trans](https://jorisbaan.nl/posts/)
-https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse
+- [Joris Baan](https://jorisbaan.nl/posts/)
+- [Cameron Wolfe](https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse)
