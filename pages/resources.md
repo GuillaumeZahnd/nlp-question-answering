@@ -18,6 +18,7 @@
 - [Anthropic](https://docs.anthropic.com/en/home)
 - [Unsloth](https://docs.unsloth.ai/)
 - [Langformers](https://langformers.com/)
+- [Langchain](https://python.langchain.com/docs/introduction/)
 
 ## Courses
 

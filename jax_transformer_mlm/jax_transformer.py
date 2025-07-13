@@ -1,5 +1,7 @@
 import math
+import numpy as np
 import jax.numpy as jnp
+import jax
 from jax import Array
 from jax.typing import ArrayLike
 from flax import linen as nn
@@ -180,3 +182,28 @@ class TransformerEncoder(nn.Module):
             attention_maps.append(attention_map)
             x = l(x, mask=mask, train=train)
         return attention_maps
+
+
+class PositionalEncoding(nn.Module):
+
+    hidden_dimensionality : int
+    maximum_sequence_length : int = 5000
+
+    def setup(self):
+        positional_encoding = np.zeros((self.maximum_sequence_length, self.hidden_dimensionality))
+        position = np.arange(0, self.maximum_sequence_length, dtype=np.float32)[:,None]
+        denominator = np.exp(np.arange(0, self.hidden_dimensionality, 2) * (-math.log(10000.0) / self.hidden_dimensionality))
+        positional_encoding[:, 0::2] = np.sin(position * denominator)
+        positional_encoding[:, 1::2] = np.cos(position * denominator)
+        positional_encoding = positional_encoding[None]
+        self.positional_encoding = jax.device_put(positional_encoding)
+
+    def __call__(self, x):
+
+        ##print(x.shape)
+        ##print(self.positional_encoding[:, :x.shape[1]].shape)
+        ##input("pause")
+
+        x = x + self.positional_encoding[:, :x.shape[1]]
+
+        return x
