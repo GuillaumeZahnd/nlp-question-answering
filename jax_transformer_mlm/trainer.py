@@ -8,11 +8,22 @@ from flax.training import checkpoints
 from torch.utils.tensorboard import SummaryWriter
 from tqdm.auto import tqdm
 from transformer_predictor import TransformerPredictor
+import numpy as np
 
 
 class TrainerModule:
 
-    def __init__(self, model_name, exmp_batch, max_iters, checkpoint_path, lr=1e-3, warmup=100, seed=42, **model_kwargs):
+    def __init__(
+        self,
+        model_name,
+        exmp_batch,
+        max_iters,
+        checkpoint_path,
+        lr=1e-3,
+        warmup=100,
+        seed=421,
+        **model_kwargs):
+
         """
         Inputs:
             model_name - Name of the model. Used for saving and checkpointing
@@ -29,14 +40,14 @@ class TrainerModule:
         self.lr = lr
         self.warmup = warmup
         self.seed = seed
-        # Create empty model. Note: no parameters yet
+
         self.model = TransformerPredictor(**model_kwargs)
-        # Prepare logging
+
         self.log_dir = os.path.join(self.checkpoint_path, self.model_name)
         self.logger = SummaryWriter(log_dir=self.log_dir)
-        # Create jitted training and eval functions
-        self.create_jitter_train_and_eval_functions()
-        # Initialize model
+
+        self.create_jitted_train_and_eval_functions()
+
         self.init_model(exmp_batch)
 
 
@@ -52,7 +63,7 @@ class TrainerModule:
         raise NotImplementedError
 
 
-    def create_jitter_train_and_eval_functions(self):
+    def create_jitted_train_and_eval_functions(self):
         calculate_loss = self.get_loss_function()
 
         def train_step(state, rng, batch):
@@ -74,7 +85,6 @@ class TrainerModule:
         self.rng = jax.random.PRNGKey(self.seed)
         self.rng, init_rng, dropout_init_rng = jax.random.split(self.rng, 3)
         exmp_input = self.batch_to_input(exmp_batch)
-
         params = self.model.init(
             {'params': init_rng, 'dropout': dropout_init_rng}, exmp_input, train=True)['params']
 
@@ -142,3 +152,25 @@ class TrainerModule:
 
     def checkpoint_exists(self):
         return os.path.isfile(os.path.join(self.checkpoint_path, f'{self.model_name}.ckpt'))
+
+
+class Trainer(TrainerModule):
+
+    def batch_to_input(self, batch):
+        # batch: [input_indices[], mask[], masked_indices[], labels[]]
+        # (Currently no need to adapt the batch structure)
+        input_data = batch
+        return input_data
+
+    def get_loss_function(self):
+
+        def calculate_loss(params, rng, batch, train):
+            input_data = batch[0]
+            labels = batch[3]
+            rng, dropout_apply_rng = jax.random.split(rng)
+            logits = self.model.apply({'params': params}, input_data, train=train, rngs={'dropout': dropout_apply_rng})           
+            loss = optax.softmax_cross_entropy_with_integer_labels(logits, labels).mean()
+            accuracy = (logits.argmax(axis=-1) == labels).mean()
+            return loss, (accuracy, rng)
+
+        return calculate_loss

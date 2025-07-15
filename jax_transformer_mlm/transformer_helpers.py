@@ -199,11 +199,4 @@ class PositionalEncoding(nn.Module):
         self.positional_encoding = jax.device_put(positional_encoding)
 
     def __call__(self, x):
-
-        ##print(x.shape)
-        ##print(self.positional_encoding[:, :x.shape[1]].shape)
-        ##input("pause")
-
-        x = x + self.positional_encoding[:, :x.shape[1]]
-
-        return x
+        return x + self.positional_encoding[:, :x.shape[1]]

@@ -29,9 +29,9 @@ jupyter = {version="==1.1.1", index="pypi"}
 ipykernel = {version="==6.29.5", index="pypi"}
 
 # JAX
-jax = {version=">=0.4.1", index="pypi"}
-flax = {version=">=0.6.6", index="pypi"}
-optax = {version=">=0.2.5", index="pypi"}
+jax = {version="=0.4.30", index="pypi"}
+flax = {version="=0.8.5", index="pypi"}
+optax = {version="=0.2.2", index="pypi"}
 
 # Misc
 torch = {version="==2.7.1", index="pypi"}

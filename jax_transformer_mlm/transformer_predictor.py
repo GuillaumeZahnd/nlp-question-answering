@@ -1,18 +1,17 @@
 from flax import linen as nn
-from jax_transformer import PositionalEncoding
-from jax_transformer import TransformerEncoder
+from transformer_helpers import PositionalEncoding
+from transformer_helpers import TransformerEncoder
 
 
 class TransformerPredictor(nn.Module):
     model_dim : int                   # Hidden dimensionality to use inside the Transformer
-    #num_classes : int                 # Number of classes to predict per sequence element
+    num_classes : int                 # Number of classes to predict per sequence element
     num_heads : int                   # Number of heads to use in the Multi-Head Attention blocks
     num_layers : int                  # Number of encoder blocks to use
     dropout_prob : float = 0.0        # Dropout to apply inside the model
     input_dropout_prob : float = 0.0  # Dropout to apply on the input features
 
     def setup(self):
-
         self.input_dropout = nn.Dropout(self.input_dropout_prob)
         self.input_layer = nn.Dense(self.model_dim)
         self.positional_encoding = PositionalEncoding(self.model_dim)
@@ -31,8 +30,9 @@ class TransformerPredictor(nn.Module):
             nn.Dense(self.model_dim),
             nn.LayerNorm(),
             nn.relu,
-            nn.Dropout(self.dropout_prob)]
-            #nn.Dense(self.num_classes)]
+            nn.Dropout(self.dropout_prob),
+            nn.Dense(self.num_classes)]
+
 
     def __call__(self, x, mask=None, add_positional_encoding=True, train=True):
         """
@@ -43,6 +43,7 @@ class TransformerPredictor(nn.Module):
                                       Might not be desired for some tasks.
             train - If True, dropout is stochastic
         """
+
         x = self.input_dropout(x, deterministic=not train)
         x = self.input_layer(x)
         if add_positional_encoding:
@@ -53,6 +54,7 @@ class TransformerPredictor(nn.Module):
             x = l(x) if not isinstance(l, nn.Dropout) else l(x, deterministic=not train)
 
         return x
+
 
     def get_attention_maps(self, x, mask=None, add_positional_encoding=True, train=True):
         """

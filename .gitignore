@@ -3,3 +3,5 @@ __pycache__/
 *.arrow
 *.swp
 wandb
+*jax_checkpoints*
+Pipfile
