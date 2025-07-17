@@ -3,6 +3,7 @@
 | Acronym | Full term |
 | --- | --- |
 | BERT | Bidirectional Encoder Representations from Transformers |
+| BM25 | Best Matching 25 |
 | CBOW | Continuous Bag of Words |
 | CoNLL | Conference on Computational Natural Language Learning |
 | DAE | Denoising Autoencoder |
