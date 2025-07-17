@@ -10,6 +10,7 @@
 | LLM | Large Language Model |
 | LoRA | Low-Rank Adaptation |
 | MLM | Masked Language Modeling |
+| MoE | Mixture of Experts |
 | NER | Named Entity Recognition |
 | NLP | Natural Language Processing |
 | NSP | Next Sentence Prediction |

@@ -45,8 +45,7 @@ requests = {version="==2.32.4", index="pypi"}
 faiss-cpu = {version="==1.11.0", index="pypi"}
 seqeval = {version="==1.2.2", index="pypi"}
 wandb = {version="==0.21.0", index="pypi"}
-
-[dev-packages]
+together = {version="==1.5.21", index="pypi"}
 
 [requires]
 python_version="3.12"

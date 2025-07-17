@@ -1,5 +1,10 @@
 # Resources
 
+## AI Safety, Ethics, and Society
+
+- [AI Futures Project] (https://ai-2027.com/]
+- [Forethought] (https://www.forethought.org/)
+
 ## Books
 
 - [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
@@ -18,7 +23,8 @@
 - [Anthropic](https://docs.anthropic.com/en/home)
 - [Unsloth](https://docs.unsloth.ai/)
 - [Langformers](https://langformers.com/)
-- [Langchain](https://python.langchain.com/docs/introduction/)
+- [LangChain](https://python.langchain.com/docs/introduction/)
+- [LangGhain](https://langchain-ai.github.io/langgraph/)
 
 ## Courses
 
@@ -36,3 +42,4 @@
 - [Jay Alammar](https://jalammar.github.io/illustrated-transformer/)
 - [Joris Baan](https://jorisbaan.nl/posts/)
 - [Cameron Wolfe](https://cameronrwolfe.substack.com/p/decoder-only-transformers-the-workhorse)
+
