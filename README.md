@@ -12,7 +12,7 @@ This Git repository is dedicated to experimenting various techniques of Natural 
 
 :robot: [Demo CBOW (TensorFlow)](demo_cbow.ipynb)
 
-:robot: [Demo LLM (Together AI)](together_ai_llm/README.md)
+:robot: [Demo LLM (Together AI)](together_ai_llm/)
 
 :books: [Resources](pages/resources.md)
 
