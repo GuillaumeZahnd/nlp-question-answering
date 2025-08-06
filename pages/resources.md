@@ -2,8 +2,9 @@
 
 ## AI Safety, Ethics, and Society
 
-- [AI Futures Project] (https://ai-2027.com/]
-- [Forethought] (https://www.forethought.org/)
+- [AI Futures Project](https://ai-2027.com/)
+- [Forethought](https://www.forethought.org/)
+- [Center for AI Safety](https://safe.ai/)
 
 ## Books
 
@@ -25,6 +26,13 @@
 - [Langformers](https://langformers.com/)
 - [LangChain](https://python.langchain.com/docs/introduction/)
 - [LangGhain](https://langchain-ai.github.io/langgraph/)
+- [Faiss](https://faiss.ai/index.html)
+
+## Vector databases
+
+- [Weaviate](https://weaviate.io/)
+- [Pinecone](https://www.pinecone.io/)
+- [Chroma](https://trychroma.com/)
 
 ## Courses
 
